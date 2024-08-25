@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-a4d7p0X1CNE1X+aKb+pz4l2+D9+crPr/nT0Lxs2TV8kmQxWJDLXXaN1slg02Q5hlqzSKcB3UHRfnbSLCm5E0Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Grolimund Lukas</h1>
+        <nav>
+            <a href="#persönliche-informationen">Persönliche Informationen</a>
+            <a href="#berufserfahrung">Berufserfahrung</a>
+            <a href="#bildung">Bildung</a>
+            <a href="#ehrenamtliche-tätigkeiten">Ehrenamtliche Tätigkeiten</a>
+            <a href="#fähigkeiten-und-kompetenzen">Fähigkeiten</a>
+            <a href="#sprachkenntnisse">Sprachkenntnisse</a>
+        </nav>
+        <div id="menu-icon" onclick="openMenu()">
+            &#9776; <!-- Hamburger Icon -->
+        </div>
+    </header>
+    
+    <div id="overlay-menu" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+        <div class="overlay-content">
+            <a href="#persönliche-informationen" onclick="closeMenu()">Persönliche Informationen</a>
+            <a href="#berufserfahrung" onclick="closeMenu()">Berufserfahrung</a>
+            <a href="#bildung" onclick="closeMenu()">Bildung</a>
+            <a href="#ehrenamtliche-tätigkeiten" onclick="closeMenu()">Ehrenamtliche Tätigkeiten</a>
+            <a href="#fähigkeiten-und-kompetenzen" onclick="closeMenu()">Fähigkeiten</a>
+            <a href="#sprachkenntnisse" onclick="closeMenu()">Sprachkenntnisse</a>
+        </div>
+    </div>
+    
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Suchen...">
+    </div>
+
+    <section class="container section image-container">
+        <img src="Bild.jpeg" alt="Ein schönes Bild">
+    </section>
+
+    <section class="container section">
+        <h2 id="persönliche-informationen">Persönliche Informationen</h2>
+        <div class="content">
+            <p><strong>Name:</strong> Lukas Grolimund</p>
+            <p><strong>Adresse:</strong> Passstrasse</p>
+            <p><strong>Telefon:</strong> 079 455 30 70</p>
+            <p><strong>Email:</strong> lug@mail.com</p>
+        </div>
+    </section>
+
+    <section class="container section">
+        <h2 id="berufserfahrung">Berufserfahrung</h2>
+        <button onclick="toggleVisibility('berufserfahrung-content')">Ein-/Ausblenden</button>
+        <div id="berufserfahrung-content" class="content hidden">
+            <ul>
+                <li>
+                    <h3>Studium zum Dipl. HF-Informatiker/Schwerpunkt Softwareentwicklung</h3>
+                    <p><strong>Zeitspanne:</strong> Seit Januar 2024</p>
+                    <p>Aufgaben:</p>
+                    <ul>
+                        <li>Systemtechnik</li>
+                        <li>Programmieren</li>
+                        <li>Datentechnik</li>
+                        <li>Requirements-Engineering</li>
+                        <li>Softwareengineering</li>
+                        <li>Systemmanagement</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Grundstudium</h3>
+                    <p><strong>Zeitspanne:</strong> April 2023 - Dez. 2023</p>
+                    <p>Aufgaben:</p>
+                    <ul>
+                        <li>Betriebsführung</li>
+                        <li>Betriebswirtschaft</li> 
+                        <li>Finanz- und Rechnungswesen</li>
+                        <li>Leadership, Projektmanagement</li>
+                        <li>Technik</li>
+                        <li>Wirtschaft und Recht</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Trainee Microsoft Cloud Engineer</h3>
+                    <p><strong>Zeitspanne:</strong> Juni 2023 - Dez. 2023</p>
+                    <p>Aufgaben:</p>
+                    <ul>
+                        <li>Verwaltung von virtuellen Maschinen und Netzwerken</li>
+                        <li>Erstellen von Sicherheitsrichtlinien in Microsoft Testumgebungen</li>
+                        <li>Zusammenarbeit mit IT-Profis bei der Entwicklung von MS Cloud-basierten Anwendungen</li>
+                        <li>Fehleranalyse und effektive Fehlerbehebung</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Zwischenjob in Sportshop</h3>
+                    <p><strong>Zeitspanne:</strong> Sep. 2022 - März 2023</p>
+                    <p>Aufgaben:</p>
+                    <ul>
+                        <li>Vermietung von Skiausrüstung</li>
+                        <li>Verkauf von Sportartikeln</li>
+                        <li>Professionelle Beratung</li>
+                        <li>Kundenkontakt</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Vorstudium IT-Softwareentwicklung</h3>
+                    <p><strong>Zeitspanne:</strong> August 2022 - Sep. 2022</p>
+                    <p>Aufgaben:</p>
+                    <ul>
+                        <li>Vorstudium IT-Softwareentwicklung</li>
+                        <li>Vertiefungstrainings mit Schwerpunkt Programmieren</li>
+                        <li>Programmentwicklung mit Python</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Tätigkeiten auf dem Familienbauernbetrieb</h3>
+                    <p><strong>Zeitspanne:</strong> Mai 2022 - August 2022</p>
+                    <p>Aufgaben:</p>
+                    <ul>
+                        <li>Aushilfe für landwirtschaftliche Arbeiten im Bereich Holzerei</li>
+                        <li>Bedienung landwirtschaftlicher Maschinen</li>
+                        <li>Pflege von Tieren (Nutztieren)</li>
+                        <li>Spezialeinsätze mit einer Wärmebildkamera-Drohne zur Rehkitzabsuche</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Montage und Produktion im Metallbau</h3>
+                    <p><strong>Zeitspanne:</strong> Aug. 2021 - Mai 2022</p>
+                    <p>Aufgaben:</p>
+                    <ul>
+                        <li>Zusammenbau von Metallkonstruktionen</li>
+                        <li>Schweissen</li>
+                        <li>Wartung und Reparatur von Metallteilen</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container section">
+        <h2 id="bildung">Bildung</h2>
+        <button onclick="toggleVisibility('bildung-content')">Ein-/Ausblenden</button>
+        <div id="bildung-content" class="content hidden">
+            <ul>
+                <li>
+                    <h3>Dipl. HF-Informatiker (geplant)</h3>
+                    <p><strong>Institution:</strong> Schweizerische IT-Berufsbildung (SIB), Zürich</p>
+                    <p><strong>Zeitspanne:</strong> Januar 2024 - voraussichtlich Dez. 2026</p>
+                </li>
+                <li>
+                    <h3>Grundstudium HF-Informatik</h3>
+                    <p><strong>Institution:</strong> Schweizerische IT-Berufsbildung (SIB), Zürich</p>
+                    <p><strong>Zeitspanne:</strong> April 2023 - Dez. 2023</p>
+                </li>
+                <li>
+                    <h3>Lehre als Polymechaniker EFZ</h3>
+                    <p><strong>Institution:</strong> SBW Neue Technik Ostschweiz, Rorschach</p>
+                    <p><strong>Zeitspanne:</strong> Aug. 2017 - Juli 2021</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container section">
+        <h2 id="ehrenamtliche-tätigkeiten">Ehrenamtliche Tätigkeiten</h2>
+        <button onclick="toggleVisibility('ehrenamtliche-tätigkeiten-content')">Ein-/Ausblenden</button>
+        <div id="ehrenamtliche-tätigkeiten-content" class="content hidden">
+            <ul>
+                <li>
+                    <h3>Rehkitzrettung Schweiz</h3>
+                    <p><strong>Organisation:</strong> Tierschutz Schweiz</p>
+                    <p><strong>Zeitspanne:</strong> April 2015 - Sep. 2024</p>
+                </li>
+                <li>
+                    <h3>Freiwillige Feuerwehr</h3>
+                    <p><strong>Organisation:</strong> Beinwil SO</p>
+                    <p><strong>Zeitspanne:</strong> Sep. 2018 - Juni 2024</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="container section">
+        <h2 id="sprachkenntnisse">Sprachkenntnisse</h2>
+        <button onclick="toggleVisibility('sprachkenntnisse-content')">Ein-/Ausblenden</button>
+        <div id="sprachkenntnisse-content" class="content hidden">
+            <ul>
+                <li>Deutsch (Muttersprache)</li>
+                <li>Englisch (fließend)</li>
+                <li>Französisch (Grundkenntnisse)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container section">
+        <h2 id="fähigkeiten-und-kompetenzen">Fähigkeiten und Kompetenzen</h2>
+        <div class="filter-container">
+            <label for="skill-category">Kategorie filtern:</label>
+            <select id="skill-category">
+                <option value="all">Alle</option>
+                <option value="programming">Programmierung</option>
+                <option value="cloud">Cloud-Technologien</option>
+                <option value="management">Management</option>
+            </select>
+        </div>
+        <div id="skills-container"></div> <!-- Dynamische Fortschrittsbalken werden hier durch JS eingefügt -->
+    </section>
+
+    <!-- index.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+</head>
+
+<body>
+    <section class="container section">
+        <h2 id="kontakt">Kontakt</h2>
+        <form action="/submit_form" method="post" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Absenden">
+            </div>
+        </form>
+    </section>
+</body>
+</html>
+    
+    <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">Top</button>
+
+    <footer>
+        <p>&copy; 2023 Lukas Grolimund. Alle Rechte vorbehalten.</p>
+        <div id="current-time"></div>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
+
