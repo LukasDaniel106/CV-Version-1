@@ -144,7 +144,6 @@ header a:hover {
 
 .progress {
     height: 20px;
-    line-height: 20px;
     background-color: #1DB954;
     color: #fff;
     text-align: center;
@@ -152,17 +151,25 @@ header a:hover {
     width: 0;
     transition: width 1.5s ease-in-out;
     font-size: 1.2vw; /* Dynamische Schriftgröße */
+    display: flex;
+    align-items: center; /* Vertikale Zentrierung des Textes */
+    justify-content: center; /* Horizontale Zentrierung des Textes */
+    padding: 0 5px; /* Verhindert, dass Text direkt an den Rändern ist */
 }
 
 @media (max-width: 768px) {
     .progress {
-        font-size: 2.5vw; /* Anpassung für mittelgroße Bildschirme */
+        font-size: 2vw; /* Anpassung für mittelgroße Bildschirme */
+        height: 18px; /* Höhe etwas reduzieren */
+        padding: 0 4px; /* Etwas mehr Platz für Text */
     }
 }
 
 @media (max-width: 480px) {
     .progress {
-        font-size: 3.5vw; /* Anpassung für kleine Bildschirme */
+        font-size: 2.8vw; /* Anpassung für kleine Bildschirme */
+        height: 15px; /* Höhe reduzieren */
+        padding: 0 3px; /* Verhindert das Abschneiden von Text */
     }
 }
 
