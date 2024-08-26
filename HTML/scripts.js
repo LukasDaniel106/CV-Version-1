@@ -149,4 +149,3 @@ function openMenu() {
 function closeMenu() {
     document.getElementById("overlay-menu").style.width = "0%";
 }
-
