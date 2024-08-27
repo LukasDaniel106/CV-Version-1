@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lfp3C8qAAAAAPVSF4Dlil8xc583wyk3MzMYBe7f"></script>
+    <!--<script src="https://www.google.com/recaptcha/api.js?render=6Lfp3C8qAAAAAPVSF4Dlil8xc583wyk3MzMYBe7f"></script>-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum Vitae</title>
@@ -220,13 +220,11 @@
             <form class="contact-form" id="contact-form">
                 <input type="text" id="name" placeholder="Vorname" required><br>
                 <input type="email" id="email" placeholder="Email" required><br>
-                <input type="text" id="subject" placeholder="Objekt" required><br>
+                <input type="text" id="subject" placeholder="Betreff" required><br>
                 <textarea id="message" placeholder="Nachricht" cols="30" rows="10" required></textarea><br>
-                <button class="g-recaptcha" 
-                        data-sitekey="6Lfp3C8qAAAAAPVSF4Dlil8xc583wyk3MzMYBe7f" 
-                        data-callback='onSubmit' 
-                        data-action='submit'>Absenden</button>
+                <button type="submit">Absenden</button>
             </form>
+            <div id="feedbackMessage" style="margin-top: 20px"></div> 
         </div>
     </section>
     
@@ -237,42 +235,67 @@
         <div id="current-time"></div>
     </footer>
     
-    <script>
-        function onSubmit(token) {
-            document.getElementById("contact-form").submit();
-        }
+<!-- Include jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 
-        function toggleVisibility(id) {
-            const element = document.getElementById(id);
-            if (element.classList.contains('hidden')) {
-                element.classList.remove('hidden');
-            } else {
-                element.classList.add('hidden');
-            }
-        }
+<!-- JavaScript to handle form submission -->
+<script>
+  $(document).ready(function () {
+    $("#contact-form").submit(function (event) {
+      event.preventDefault(); // Prevent the default form submission
 
-        function scrollToTop() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
+      // Collect form data
+      var name = $("#name").val();
+      var email = $("#email").val();
+      var Objekt = $("#subject").val();
+      var Nachricht = $("#message").val();
 
-        function openMenu() {
-            document.getElementById("overlay-menu").style.width = "100%";
-        }
+      if (name === "" || email === "" || Objekt === "" || Nachricht === "") {
+        // Display an error message if any of the required fields are empty
+        $("#feedbackMessage").html(
+          '<div class="alert alert-danger" role="alert">Please fill in all the required fields.</div>'
+        );
+        return;
+      }
 
-        function closeMenu() {
-            document.getElementById("overlay-menu").style.width = "0%";
-        }
+      const formData = {
+        name: name,
+        mail: email, // "mail" key corresponds to {{mail}} in your template¨
+        Objekt: Objekt,
+        Nachricht: Nachricht,
+      };
 
-        // Dynamic script for current time display
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const timeDisplay = document.getElementById('current-time');
-            setInterval(() => {
-                const now = new Date();
-                timeDisplay.textContent = now.toLocaleTimeString();
-            }, 1000);
+      // Prepare the data for the EmailJS API request
+      var data = {
+        service_id: "service_4agqsei", // Replace with your actual service ID
+        template_id: "template_u8al3t9", // Replace with your actual template ID
+        user_id: "KnpLQhvPf-d-pYgzG", // Replace with your actual public key
+        template_params: formData,
+      };
+
+      // Send the email using jQuery's ajax function
+      $.ajax("https://api.emailjs.com/api/v1.0/email/send", {
+        type: "POST",
+        data: JSON.stringify(data),
+        contentType: "application/json",
+      })
+        .done(function () {
+          $("#feedbackMessage").html(
+            '<div class="alert alert-success" role="alert">Form submitted successfully!</div>'
+          );
+          $("#contact-form")[0].reset();
+        })
+        .fail(function (error) {
+          $("#feedbackMessage").html(
+            '<div class="alert alert-danger" role="alert">There was an error submitting the form. Please try again later.</div>'
+          );
+          console.log("Error:", error);
         });
-    </script>
-
-    
+    });
+  });
+</script>
+  
 </body>
 </html>
